@@ -18,7 +18,7 @@ spec:
           name: hello-argo
           ports:
             - containerPort: 8080
-        - args:
+          args:
             - -service
             - other
           env:
