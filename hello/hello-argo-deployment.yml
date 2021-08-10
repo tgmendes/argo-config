@@ -20,7 +20,7 @@ spec:
             - containerPort: 8080
           args:
             - -service
-            - other
+            - hello
           env:
             - name: name
               value: Duarte
