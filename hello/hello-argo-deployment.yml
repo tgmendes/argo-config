@@ -23,4 +23,4 @@ spec:
             - hello
           env:
             - name: name
-              value: Duarte
+              value: Cuvva
