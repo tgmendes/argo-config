@@ -14,7 +14,7 @@ spec:
         app: hello-argo
     spec:
       containers:
-        - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-          name: guestbook-ui
+        - image: tgmendes/hello-argo:latest
+          name: hello-argo
           ports:
-            - containerPort: 80
+            - containerPort: 8080
