@@ -15,12 +15,12 @@ spec:
     spec:
       containers:
         - image: tgmendes/hello-argo:latest
+          name: hello-argo
+          ports:
+            - containerPort: 8080
         - args:
             - -service
             - other
           env:
             - name: name
               value: Duarte
-          name: hello-argo
-          ports:
-            - containerPort: 8080
