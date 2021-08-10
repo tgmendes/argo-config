@@ -18,9 +18,9 @@ spec:
         - args:
             - -service
             - other
-          environment:
+          env:
             - name: name
-            - value: Duarte
+            - Duarte
           name: hello-argo
           ports:
             - containerPort: 8080
