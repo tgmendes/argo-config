@@ -1,0 +1,32 @@
+{
+	"labels": [
+		{
+			"color": "699991",
+			"default": false,
+			"description": "",
+			"id": 3249801261,
+			"name": "svc-raffle",
+			"node_id": "MDU6TGFiZWwzMjQ5ODAxMjYx",
+			"url": "https://api.github.com/repos/tgmendes/hello-argo/labels/svc-raffle"
+		},
+		{
+			"color": "9C7092",
+			"default": false,
+			"description": "",
+			"id": 3249801997,
+			"name": "env-avocado",
+			"node_id": "MDU6TGFiZWwzMjQ5ODAxOTk3",
+			"url": "https://api.github.com/repos/tgmendes/hello-argo/labels/env-avocado"
+		},
+		{
+			"color": "9C7092",
+			"default": false,
+			"description": "",
+			"id": 3249801997,
+			"name": "env-coconut",
+			"node_id": "MDU6TGFiZWwzMjQ5ODAxOTk3",
+			"url": "https://api.github.com/repos/tgmendes/hello-argo/labels/env-avocado"
+		}
+	],
+	"tags": "tgmendes/hello-argo:pr-2"
+}
