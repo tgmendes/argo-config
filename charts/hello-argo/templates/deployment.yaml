@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.service.name }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: {{ .Values.service.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.service.name }}
+    spec:
+      containers:
+        - image: {{ .Values.service.image }}
+          name: {{ .Values.service.name }}
+          ports:
+            - containerPort: 8080
+          args:
+            - -service
+            - hello
+          env:
+            - name: name
+              value: Duarte
