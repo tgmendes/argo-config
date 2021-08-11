@@ -14,7 +14,3 @@ spec:
     repoURL: https://github.com/tgmendes/argo-config.git
     path: charts
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
