@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tgmendes/argo-config.git
-    path: apps
+    path: charts
     targetRevision: HEAD
   syncPolicy:
     automated:
