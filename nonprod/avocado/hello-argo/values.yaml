@@ -1,0 +1,2 @@
+service_name: hello-argo
+docker_image: tgmendes/hello-argo:latest
