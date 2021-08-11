@@ -1,0 +1,11 @@
+name: Repository Dispatch
+on:
+  repository_dispatch:
+    types: [trigger_deployment]
+jobs:
+  trigger_deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ${{ github.event.client_payload }}
+
