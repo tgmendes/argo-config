@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: app1
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc
-    namespace: default
-  project: default
+    namespace: env1
+    name: in-cluster
+  project: env1
   source:
-    repoURL: https://github.com/tgmendes/argo-config.git
-    path: charts
+    path: charts/hello-argo
+    repoURL: https://github.com/tgmendes/argo-config
     targetRevision: HEAD
