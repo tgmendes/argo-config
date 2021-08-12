@@ -6,8 +6,9 @@ jobs:
   prepare_changes:
     runs-on: ubuntu-latest
     steps:
-      - name: Parse payload
+      - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Parse payload
         run: sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.client_payload) }}
 
   apply_changes:
