@@ -8,6 +8,10 @@ DOCKER_IMAGE=$(echo $1 | jq -r '.tags')
 
 for env in $ENVS
 do
+  if [ ! -d "nonprod/$env" ]; then
+    echo "environment $env doesn't exist"; exit 1;
+  fi
+
   for svc in $SERVICES
   do
     SERVICE_PATH=nonprod/$env/services/$svc
