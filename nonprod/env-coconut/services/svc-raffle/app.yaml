@@ -3,13 +3,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-raffle-2
+  name: svc-raffle
 spec:
   ports:
     - port: 80
       targetPort: 8080
   selector:
-    app: svc-raffle-2
+    app: svc-raffle
 ---
 # Source: application/templates/deployment.yaml
 apiVersion: apps/v1
