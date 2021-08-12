@@ -37,7 +37,7 @@ jobs:
         with:
           exec: |
               helm version
-              helm template charts/application --set service.name='a' --set service.image='b' >> $SERVICE_PATH/app.yaml
+              helm template charts/application --set service.name='a' --set service.image='b' > $SERVICE_PATH/app.yaml
 
       - name: List created files
         env:
