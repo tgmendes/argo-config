@@ -10,7 +10,7 @@ spec:
   sourceRepos:
     - '*'
   destinations:
-    - namespace: env1
+    - namespace: env-avocado
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
     - group: '*'
