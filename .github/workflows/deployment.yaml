@@ -20,7 +20,6 @@ jobs:
           echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
           sudo apt-get -y update
           sudo apt-get -y install helm
-          helm version
 
       - name: Run helm templates
         run: |
