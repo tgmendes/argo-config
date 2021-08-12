@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: env1
+  name: env-avocado
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: env1 project
+  description: env-avocado space
   sourceRepos:
     - '*'
   destinations:

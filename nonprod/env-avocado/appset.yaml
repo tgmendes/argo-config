@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: env1
+  name: env-avocado
   namespace: argocd
 spec:
   generators:
@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/tgmendes/argo-config.git
         revision: HEAD
         directories:
-          - path: nonprod/env1/services/*
+          - path: nonprod/env-avocado/services/*
   template:
     metadata:
       name: '{{path.basename}}'
