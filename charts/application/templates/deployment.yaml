@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       app: {{ .Values.service.name }}
+      ns: {{ .Values.env }}
   template:
     metadata:
       labels:
