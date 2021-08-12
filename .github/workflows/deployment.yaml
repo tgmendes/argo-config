@@ -25,6 +25,14 @@ jobs:
         run: |
           sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.inputs.event) }}
 
+      - name: Commit & push
+        run: |
+          git config user.name the-deployer
+          git config user.email the-deployer@github.com
+          git add .
+          git commit -m "Insert awesome commit message here"
+          git push
+
 #  sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.client_payload) }}
 
 # @TODO
