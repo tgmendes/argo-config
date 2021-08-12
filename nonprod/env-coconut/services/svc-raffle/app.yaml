@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - image: tgmendes/hello-argo:3fe18f5579385df8fb1bb97b811795deab95c72f
-          name: svc-raffle
+          name: svc-raffle-2
           ports:
             - containerPort: 8080
           args:
