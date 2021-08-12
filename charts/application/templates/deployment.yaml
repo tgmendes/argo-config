@@ -20,7 +20,7 @@ spec:
             - containerPort: 8080
           args:
             - -service
-            - hello
+            - {{ .Values.service.name }}
           env:
-            - name: name
-              value: Duarte
+            - name: COMMIT_HASH
+              value: {{ .Values.commitHash }}
