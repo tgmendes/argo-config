@@ -8,6 +8,7 @@ on:
     types: [ trigger_deployment ]
 jobs:
   prepare_changes:
+    concurrency: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
