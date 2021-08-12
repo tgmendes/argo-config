@@ -3,13 +3,16 @@ on:
   repository_dispatch:
     types: [trigger_deployment]
 jobs:
-  trigger_deployment:
+  prepare_changes:
     runs-on: ubuntu-latest
     steps:
       - name: Parse payload
         uses: actions/checkout@v2
         run: sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.client_payload) }}
 
+  apply_changes:
+    runs-on: ubuntu-latest
+    steps:
       - name: Helm
         uses: WyriHaximus/github-action-helm3@v2
         run: helm version
