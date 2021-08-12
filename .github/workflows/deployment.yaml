@@ -12,4 +12,5 @@ jobs:
 
       - name: Helm
         uses: WyriHaximus/github-action-helm3@v2
-        run: helm version
+        with:
+          exec: helm version
