@@ -8,8 +8,8 @@ sudo apt-get -y install helm
 
 helm version
 
-ENVS=$(cat $1 | jq -r '.labels[] | select(.name | startswith("env-")).name')
-SERVICES=$(cat $1 | jq -r '.labels[] | select(.name | startswith("svc-")).name')
+ENVS=$(echo $1 | jq -r '.labels[] | select(.name | startswith("env-")).name')
+SERVICES=$(echo $1 | jq -r '.labels[] | select(.name | startswith("svc-")).name')
 DOCKER_IMAGE=$(echo $1 | jq -r '.tags')
 
 echo $ENVS
