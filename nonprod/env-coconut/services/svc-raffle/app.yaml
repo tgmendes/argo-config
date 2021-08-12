@@ -4,6 +4,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-raffle
+  namespace: env-coconut
 spec:
   ports:
     - port: 80
