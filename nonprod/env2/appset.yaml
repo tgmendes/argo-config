@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: env2
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/tgmendes/argo-config.git
+        revision: HEAD
+        directories:
+          - path: nonprod/env2/services/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: env2
+      source:
+        repoURL: https://github.com/tgmendes/argo-config.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: env2
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

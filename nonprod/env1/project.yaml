@@ -6,14 +6,15 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: env1
+  description: env1 project
   sourceRepos:
     - '*'
   destinations:
     - namespace: env1
       server: https://kubernetes.default.svc
-
-  # Deny all cluster-scoped resources from being created, except for Namespace
   clusterResourceWhitelist:
-    - group: ''
-      kind: Namespace
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
