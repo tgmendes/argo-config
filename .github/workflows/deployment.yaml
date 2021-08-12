@@ -24,6 +24,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+      - name: Create svc folder
+        run: mkdir -p nonprod/env1/hello-argo
+
       - name: Helm
         uses: WyriHaximus/github-action-helm3@v2
         env:
