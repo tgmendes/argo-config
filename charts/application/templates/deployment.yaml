@@ -11,6 +11,7 @@ spec:
   template:
     metadata:
       labels:
+        ns: {{ .Values.env }}
         app: {{ .Values.service.name }}
     spec:
       containers:

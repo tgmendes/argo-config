@@ -17,7 +17,7 @@ do
     echo "processing $SERVICE_PATH"
 
     mkdir -p "$SERVICE_PATH"
-    helm template charts/application --set service.name=$svc --set service.image=$DOCKER_IMAGE > $SERVICE_PATH/app.yaml
+    helm template charts/application --set env=$env --set service.name=$svc --set service.image=$DOCKER_IMAGE > $SERVICE_PATH/app.yaml
   done
 done
 

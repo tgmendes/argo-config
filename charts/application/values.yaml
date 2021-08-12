@@ -1,3 +1,4 @@
 service:
   name: hello-argo
   image: tgmendes/hello-argo:main
+env: env-coconut
