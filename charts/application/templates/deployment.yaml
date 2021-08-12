@@ -8,11 +8,9 @@ spec:
   selector:
     matchLabels:
       app: {{ .Values.service.name }}
-      ns: {{ .Values.env }}
   template:
     metadata:
       labels:
-        ns: {{ .Values.env }}
         app: {{ .Values.service.name }}
     spec:
       containers:
