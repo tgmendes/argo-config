@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: env2
+  name: env-coconut
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: env2 project
+  description: env-coconut project
   sourceRepos:
     - '*'
   destinations:
-    - namespace: env2
+    - namespace: env-coconut
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
     - group: '*'

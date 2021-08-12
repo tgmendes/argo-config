@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: env2
+  name: env-coconut
   namespace: argocd
 spec:
   generators:
@@ -9,19 +9,19 @@ spec:
         repoURL: https://github.com/tgmendes/argo-config.git
         revision: HEAD
         directories:
-          - path: nonprod/env2/services/*
+          - path: nonprod/env-coconut/services/*
   template:
     metadata:
       name: '{{path.basename}}'
     spec:
-      project: env2
+      project: env-coconut
       source:
         repoURL: https://github.com/tgmendes/argo-config.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: env2
+        namespace: env-coconut
       syncPolicy:
         automated:
           prune: true
