@@ -1,6 +1,9 @@
 name: Repository Dispatch
 on:
   workflow_dispatch:
+    inputs:
+      event:
+        description: the event input JSON
   repository_dispatch:
     types: [ trigger_deployment ]
 jobs:
