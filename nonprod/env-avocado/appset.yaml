@@ -14,14 +14,14 @@ spec:
     metadata:
       name: '{{path.basename}}'
     spec:
-      project: env1
+      project: env-avocado
       source:
         repoURL: https://github.com/tgmendes/argo-config.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: env1
+        namespace: env-avocado
       syncPolicy:
         automated:
           prune: true
