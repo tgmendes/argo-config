@@ -9,23 +9,23 @@ spec:
     - port: 80
       targetPort: 8080
   selector:
-    app: svc-raffle
+    app: env-avocado-svc-raffle
 ---
 # Source: application/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: svc-raffle
+  name: env-avocado-svc-raffle
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: svc-raffle
+      app: env-avocado-svc-raffle
   template:
     metadata:
       labels:
-        app: svc-raffle
+        app: env-avocado-svc-raffle
     spec:
       containers:
         - image: tgmendes/hello-argo:3fe18f5579385df8fb1bb97b811795deab95c72f
