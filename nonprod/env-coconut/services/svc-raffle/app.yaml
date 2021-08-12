@@ -22,6 +22,7 @@ spec:
   selector:
     matchLabels:
       app: svc-raffle
+      ns: env-coconut
   template:
     metadata:
       labels:
