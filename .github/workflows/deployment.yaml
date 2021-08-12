@@ -1,5 +1,6 @@
 name: Repository Dispatch
 on:
+  workflow_dispatch
   repository_dispatch:
     types: [ trigger_deployment ]
 jobs:
