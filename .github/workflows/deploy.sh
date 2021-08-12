@@ -15,23 +15,7 @@ do
 
     mkdir -p $SERVICE_PATH
     helm template charts/application --set service.name=$svc --set service.image=$DOCKER_IMAGE > $SERVICE_PATH/app.yaml
-
-    ls -lhart $SERVICE_PATH
   done
 done
 
-## @TODO support "all-env" "all-app" ect
-#for label in $FILTEREDLABELS
-#do
-#    if [[ $label == "env-"* ]]; then
-#      NAMESPACES+=($label)
-#    fi
-#
-#    if [[ $label == "svc-"* ]]; then
-#      APPS+=($label)
-#    fi
-#done
-#
-#echo "docker-image: $DOCKER_IMAGE"
-#echo "namespaces: ${NAMESPACES[@]}"
-#echo "apps: ${APPS[@]}"
+tree nonprod
