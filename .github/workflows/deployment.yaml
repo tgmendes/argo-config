@@ -21,10 +21,22 @@ jobs:
   apply_changes:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
       - name: Helm
         uses: WyriHaximus/github-action-helm3@v2
+        env:
+          SERVICE_PATH: nonprod/env1/hello-argo
         with:
-          exec: helm version
+          exec: |
+              helm version
+              helm template charts/application --set service.name='a' --set service.image='b' >> $SERVICE_PATH/app.yaml
+
+      - name: List created files
+        env:
+          SERVICE_PATH: nonprod/env1/hello-argo
+        run: ls -lhart $SERVICE_PATH
 
 # @TODO
 #  commit_and_push:
