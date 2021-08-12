@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-FILTEREDLABELS=$(jq -r '.labels' "$1" | jq -r '.[] | .name ')
+FILTEREDLABELS=$(echo $1 | jq '.labels' | jq -r '.[] | .name ')
 
-DOCKER_IMAGE=$(jq -r '.tags' "$1")
+DOCKER_IMAGE=$(echo $1 | jq '.tags')
 
 APPS=()
 NAMESPACES=()
