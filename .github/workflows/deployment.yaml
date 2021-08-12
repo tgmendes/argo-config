@@ -14,7 +14,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Parse payload
+      - name: Helm
+        uses: WyriHaximus/github-action-helm3@v2
+
+      - name: Run helm templates
         run: |
           sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.client_payload) }}
 
