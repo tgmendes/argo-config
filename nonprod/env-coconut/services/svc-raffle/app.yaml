@@ -15,23 +15,23 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: svc-raffle-2
+  name: svc-raffle
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: svc-raffle-2
+      app: svc-raffle
       ns: env-coconut
   template:
     metadata:
       labels:
         ns: env-coconut
-        app: svc-raffle-2
+        app: svc-raffle
     spec:
       containers:
         - image: tgmendes/hello-argo:3fe18f5579385df8fb1bb97b811795deab95c72f
-          name: svc-raffle-2
+          name: svc-raffle
           ports:
             - containerPort: 8080
           args:
