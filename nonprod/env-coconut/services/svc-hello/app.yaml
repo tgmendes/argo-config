@@ -28,7 +28,7 @@ spec:
         app: env-coconut-svc-hello
     spec:
       containers:
-        - image: tgmendes/hello-argo:3123bee7928af7c404b21fde4c6a4e6f95639bfc
+        - image: tgmendes/hello-argo:d708cd5fc7e5bd6e5485be57416750cf3960bbde
           name: svc-hello
           ports:
             - containerPort: 8080
@@ -37,4 +37,4 @@ spec:
             - svc-hello
           env:
             - name: COMMIT_HASH
-              value: 3123bee7928af7c404b21fde4c6a4e6f95639bfc
+              value: d708cd5fc7e5bd6e5485be57416750cf3960bbde
