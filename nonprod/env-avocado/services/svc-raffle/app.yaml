@@ -3,8 +3,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-raffle
-  namespace: env-avocado
+  name: env-avocado-svc-raffle
 spec:
   ports:
     - port: 80
@@ -23,11 +22,9 @@ spec:
   selector:
     matchLabels:
       app: svc-raffle
-      ns: env-avocado
   template:
     metadata:
       labels:
-        ns: env-avocado
         app: svc-raffle
     spec:
       containers:
