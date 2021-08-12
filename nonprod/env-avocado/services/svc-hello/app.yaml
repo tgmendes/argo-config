@@ -28,7 +28,7 @@ spec:
         app: env-avocado-svc-hello
     spec:
       containers:
-        - image: tgmendes/hello-argo:adf081b1774c524a6d66d21f6e904ee68af142dd
+        - image: tgmendes/hello-argo:e69f49ee47f2ba69b7571e476ba2e3afbe743c93
           name: svc-hello
           ports:
             - containerPort: 8080
@@ -37,4 +37,4 @@ spec:
             - svc-hello
           env:
             - name: COMMIT_HASH
-              value: adf081b1774c524a6d66d21f6e904ee68af142dd
+              value: e69f49ee47f2ba69b7571e476ba2e3afbe743c93
