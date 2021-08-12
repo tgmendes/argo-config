@@ -6,6 +6,8 @@ SERVICES=$(echo $1 | jq -r '.labels[] | select(.name | startswith("svc-")).name'
 DOCKER_IMAGE=$(echo $1 | jq -r '.tags')
 COMMIT_HASH=$(echo $DOCKER_IMAGE | cut -d ':' -f 2)
 
+COMMIT_MSG="Deployment summary: \n\r\n\r"
+
 RAN=false
 for env in $ENVS
 do
@@ -13,10 +15,14 @@ do
     echo "environment $env doesn't exist"; exit 1;
   fi
 
+  COMMIT_MSG+="Deploying to $env \n"
+
   for svc in $SERVICES
   do
     SERVICE_PATH=nonprod/$env/services/$svc
     echo "processing $SERVICE_PATH"
+
+    COMMIT_MSG+="Deploying $svc \n"
 
     mkdir -p "$SERVICE_PATH"
     helm template charts/application \
@@ -34,3 +40,9 @@ if [ $RAN = false ]; then
 fi
 
 tree nonprod
+
+git config user.name the-deployer
+git config user.email the-deployer@github.com
+git add .
+git commit -m "$COMMIT_MSG"
+git push
