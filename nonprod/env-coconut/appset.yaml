@@ -12,7 +12,7 @@ spec:
           - path: nonprod/env-coconut/services/*
   template:
     metadata:
-      name: 'nonprod/env-coconut/{{path.basename}}'
+      name: '{{path.basename}}'
     spec:
       project: env-coconut
       source:
