@@ -3,38 +3,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: env-avocado-svc-car-value
+  name: env-coconut-svc-giffer
 spec:
   ports:
     - port: 80
       targetPort: 8080
   selector:
-    app: env-avocado-svc-car-value
+    app: env-coconut-svc-giffer
 ---
 # Source: application/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: env-avocado-svc-car-value
+  name: env-coconut-svc-giffer
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: env-avocado-svc-car-value
+      app: env-coconut-svc-giffer
   template:
     metadata:
       labels:
-        app: env-avocado-svc-car-value
+        app: env-coconut-svc-giffer
     spec:
       containers:
-        - image: tgmendes/hello-argo:e69f49ee47f2ba69b7571e476ba2e3afbe743c93
-          name: svc-car-value
+        - image: tgmendes/hello-argo:42fdf90ee33bf549f5571f79bf848753f0149154
+          name: svc-giffer
           ports:
             - containerPort: 8080
           args:
             - -service
-            - svc-car-value
+            - svc-giffer
           env:
             - name: COMMIT_HASH
-              value: e69f49ee47f2ba69b7571e476ba2e3afbe743c93
+              value: 42fdf90ee33bf549f5571f79bf848753f0149154
