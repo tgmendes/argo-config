@@ -25,6 +25,7 @@ spec:
   template:
     metadata:
       labels:
+        ns: env-avocado
         app: svc-raffle
     spec:
       containers:
