@@ -26,6 +26,7 @@ jobs:
           sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.inputs.event) }}
 
       - name: Commit & push
+        if: success()
         run: |
           git config user.name the-deployer
           git config user.email the-deployer@github.com
