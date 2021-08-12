@@ -12,7 +12,7 @@ spec:
           - path: nonprod/env-avocado/services/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: 'env-avocado-{{path.basename}}'
     spec:
       project: env-avocado
       source:
