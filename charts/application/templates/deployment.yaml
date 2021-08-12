@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.env }}-{{ .Values.service.name }}
+  name: {{ .Values.service.name }}
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: {{ .Values.env }}-{{ .Values.service.name }}
+      app: {{ .Values.service.name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.env }}-{{ .Values.service.name }}
+        app: {{ .Values.service.name }}
     spec:
       containers:
         - image: {{ .Values.service.image }}

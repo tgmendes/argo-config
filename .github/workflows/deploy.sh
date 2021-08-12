@@ -21,7 +21,6 @@ do
     mkdir -p "$SERVICE_PATH"
     helm template charts/application \
       --set commitHash=$COMMIT_HASH \
-      --set env=$env \
       --set service.name=$svc \
       --set service.image=$DOCKER_IMAGE > $SERVICE_PATH/app.yaml
 
