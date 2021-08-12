@@ -22,6 +22,7 @@ spec:
   selector:
     matchLabels:
       app: svc-raffle
+      ns: env-avocado
   template:
     metadata:
       labels:
