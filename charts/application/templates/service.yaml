@@ -7,4 +7,4 @@ spec:
     - port: 80
       targetPort: 8080
   selector:
-    app: {{ .Values.service.name }}
+    app: {{ .Values.env }}-{{ .Values.service.name }}
