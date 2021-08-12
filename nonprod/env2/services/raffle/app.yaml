@@ -28,7 +28,7 @@ spec:
         app: raffle
     spec:
       containers:
-        - image: tgmenges/hello-argo:main
+        - image: tgmendes/hello-argo:main
           name: raffle
           ports:
             - containerPort: 8080
