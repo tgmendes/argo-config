@@ -1,9 +1,9 @@
 name: Repository Dispatch
 on:
-  workflow_dispatch:
-    inputs:
-      event:
-        description: the event input JSON
+#  workflow_dispatch:
+#    inputs:
+#      event:
+#        description: the event input JSON
   repository_dispatch:
     types: [ trigger_deployment ]
 jobs:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Run helm templates
         run: |
-          sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.inputs.event) }}
+          sh ./.github/workflows/deploy.sh '${{ toJSON(github.event.client_payload) }}'
 
 #      - name: Commit & push
 #        if: success()
