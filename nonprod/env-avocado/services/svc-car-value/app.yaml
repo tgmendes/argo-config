@@ -28,7 +28,7 @@ spec:
         app: svc-car-value
     spec:
       containers:
-        - image: tgmendes/hello-argo:94d96353dec3fb8602947549187ecc8f5032cbe8
+        - image: tgmendes/hello-argo:0e2c97bebebfff5da5093bfc74a33ac94f3105b1
           name: svc-car-value
           ports:
             - containerPort: 8080
@@ -37,4 +37,4 @@ spec:
             - svc-car-value
           env:
             - name: COMMIT_HASH
-              value: 94d96353dec3fb8602947549187ecc8f5032cbe8
+              value: 0e2c97bebebfff5da5093bfc74a33ac94f3105b1
