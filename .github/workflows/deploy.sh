@@ -26,10 +26,10 @@ do
     echo "Deploying $svc" >> commit.txt
 
     mkdir -p "$SERVICE_PATH"
-#    helm template charts/application \
-#      --set commitHash=$COMMIT_HASH \
-#      --set service.name=$svc \
-#      --set service.image=$DOCKER_IMAGE > $SERVICE_PATH/app.yaml
+    helm template charts/application \
+      --set commitHash=$COMMIT_HASH \
+      --set service.name=$svc \
+      --set service.image=$DOCKER_IMAGE > $SERVICE_PATH/app.yaml
 
     RAN=true
   done
@@ -39,10 +39,10 @@ if [ $RAN = false ]; then
   exit 1;
 fi
 
-#tree nonprod
+tree nonprod
 
 git config user.name the-deployer
 git config user.email the-deployer@github.com
 git add .
 git commit -F commit.txt
-git push origin
+git push
