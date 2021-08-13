@@ -1,0 +1,5 @@
+Deployment summary:
+Deploying to env-avocado
+Deploying svc-raffle
+Deploying to env-coconut
+Deploying svc-raffle
