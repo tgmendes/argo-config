@@ -1,0 +1,40 @@
+---
+# Source: application/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-hello
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: svc-hello
+---
+# Source: application/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-hello
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: svc-hello
+  template:
+    metadata:
+      labels:
+        app: svc-hello
+    spec:
+      containers:
+        - image: tgmendes/hello-argo:2af63b6ca0657f59bb5984a79b2a3f7df765bc82
+          name: svc-hello
+          ports:
+            - containerPort: 8080
+          args:
+            - -service
+            - svc-hello
+          env:
+            - name: COMMIT_HASH
+              value: 2af63b6ca0657f59bb5984a79b2a3f7df765bc82
