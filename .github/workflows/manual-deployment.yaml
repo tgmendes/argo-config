@@ -1,4 +1,4 @@
-name: Repository Dispatch
+name: Manual Deployment
 on:
   workflow_dispatch:
     inputs:
