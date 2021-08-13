@@ -17,13 +17,14 @@ do
   fi
 
   echo "Deploying to $env" >> commit.txt
+  echo "" >> commit.txt
 
   for svc in $SERVICES
   do
     SERVICE_PATH=nonprod/$env/services/$svc
     echo "processing $SERVICE_PATH"
 
-    echo "Deploying $svc" >> commit.txt
+    echo " - Deploying $svc" >> commit.txt
 
     mkdir -p "$SERVICE_PATH"
     helm template charts/application \
