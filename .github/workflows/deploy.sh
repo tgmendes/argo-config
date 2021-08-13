@@ -45,4 +45,4 @@ git config user.name the-deployer
 git config user.email the-deployer@github.com
 git add .
 git commit -F commit.txt
-git push
+git push origin
