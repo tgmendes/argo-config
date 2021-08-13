@@ -1,4 +1,5 @@
 Deployment summary:
 Deploying to env-coconut
 
+ - Deploying svc-car-value
  - Deploying svc-hello
