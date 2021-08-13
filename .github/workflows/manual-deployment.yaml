@@ -1,9 +1,12 @@
 name: Repository Dispatch
 on:
-  repository_dispatch:
-    types: [ trigger_deployment ]
+  workflow_dispatch:
+    inputs:
+      event:
+        required: true
+        description: the event input JSON
 jobs:
-  deploy:
+  manual_deploy:
     concurrency: deploy
     runs-on: ubuntu-latest
     steps:
@@ -20,4 +23,4 @@ jobs:
 
       - name: Run helm templates
         run: |
-          sh ./.github/workflows/deploy.sh '${{ toJSON(github.event.client_payload) }}'
+          sh ./.github/workflows/deploy.sh ${{ toJSON(github.event.inputs.event) }}
