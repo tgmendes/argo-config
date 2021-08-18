@@ -1,0 +1,40 @@
+---
+# Source: application/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-car-value
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: svc-car-value
+---
+# Source: application/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-car-value
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: svc-car-value
+  template:
+    metadata:
+      labels:
+        app: svc-car-value
+    spec:
+      containers:
+        - image: tgmendes/hello-argo:c225a4320c3d49fe49f5183717aa3aa7b45cdbfe
+          name: svc-car-value
+          ports:
+            - containerPort: 8080
+          args:
+            - -service
+            - svc-car-value
+          env:
+            - name: COMMIT_HASH
+              value: c225a4320c3d49fe49f5183717aa3aa7b45cdbfe

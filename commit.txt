@@ -1,4 +1,4 @@
 Deployment summary:
-Deploying to env-avocado
+Deploying to env-coconut
 
  - Deploying svc-car-value
